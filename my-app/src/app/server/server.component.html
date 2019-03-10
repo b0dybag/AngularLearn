@@ -1,3 +1,4 @@
-<h3>
-  server works!
-</h3>
+<h3
+  [ngStyle]="{background: serverStatus === 'online' ? 'green' : 'brown',
+              color: 'white'}"
+>Server number {{serverNumber}}, status: {{serverStatus}}</h3>
