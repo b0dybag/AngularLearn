@@ -28,8 +28,10 @@ Welcome to {{ name }}!
   [ngClass]="{'white-text': servers > 5 }"
 >{{servers}}</div>
 <h3>And some static random servers:</h3>
-<app-server></app-server>
-<app-server></app-server>
+<button class="btn btn-warning" (click)="addTheStaticServer()">Add static server</button>
+<app-server *ngFor="let oneServer of staticServersList"
+            [serverInfo]="oneServer"
+></app-server>
 
 
 

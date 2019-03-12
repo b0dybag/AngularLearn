@@ -10,6 +10,7 @@ export class AppComponent {
   name = 'my-app';
   hiddenDetails = true;
   serversList = [];
+  staticServersList = [];
 
   onDisplayDetails() {
     this.hiddenDetails = !this.hiddenDetails;
@@ -19,5 +20,12 @@ export class AppComponent {
   addTheServer() {
     this.serversList.push(this.serversList.length + 1);
     // console.log(this.serversList);
+  }
+
+  addTheStaticServer() {
+    const serversCount =  this.staticServersList.length + 1;
+    const serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+    this.staticServersList.push({count: serversCount, status: serverStatus});
+    console.log(this.staticServersList);
   }
 }
