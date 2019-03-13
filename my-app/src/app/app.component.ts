@@ -28,4 +28,14 @@ export class AppComponent {
     this.staticServersList.push({count: serversCount, status: serverStatus});
     console.log(this.staticServersList);
   }
+
+  onDeleteStaticServer(serverInfo: {count: number}) {
+    this.staticServersList.splice(serverInfo.count - 1, 1);
+    let i = 1;
+    for (const server of this.staticServersList) {
+      server.count = i++;
+    }
+    // delete this.staticServersList[serverInfo.count - 1];
+  }
+
 }

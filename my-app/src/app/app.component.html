@@ -29,8 +29,10 @@ Welcome to {{ name }}!
 >{{servers}}</div>
 <h3>And some static random servers:</h3>
 <button class="btn btn-warning" (click)="addTheStaticServer()">Add static server</button>
-<app-server *ngFor="let oneServer of staticServersList"
-            [serverInfo]="oneServer"
+<app-server
+  (serverDeleting)="onDeleteStaticServer($event)"
+  *ngFor="let oneServer of staticServersList"
+  [serverInfo]="oneServer"
 ></app-server>
 
 
