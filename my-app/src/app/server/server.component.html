@@ -1,11 +1,12 @@
 <div class="row">
-  <div>
-<span
+  <div class="col-xs-12">
+<div class="badge badge-light" style="margin: 15px 15px"
   [ngStyle]="{background: serverInfo.status === 'online' ? 'green' : 'brown',
               color: 'white'}"
->Server number {{serverInfo.count}}, status: {{serverInfo.status}}</span> </div>
+>Server number {{serverInfo.count}}, status: {{serverInfo.status}}</div>
   <button
-    class="btn-danger"
+    class="btn btn-danger px-3 mx-3"
     (click) = "onDeleteServer()"
   >Delete server</button>
+  </div>
 </div>

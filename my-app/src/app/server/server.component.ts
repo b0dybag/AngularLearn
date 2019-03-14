@@ -1,4 +1,5 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, OnDestroy} from '@angular/core';
+// import {element} from 'protractor';
 
 @Component({
   selector: 'app-server',
@@ -10,9 +11,9 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
     }
   `]
 })
-export class ServerComponent implements OnInit {
-  serverNumber;
-  serverStatus;
+export class ServerComponent implements OnInit, OnDestroy {
+  // serverNumber;
+  // serverStatus;
   @Input() serverInfo: {count: number, status: string};
   @Output() serverDeleting = new EventEmitter<{count: number}>();
 
@@ -34,6 +35,10 @@ export class ServerComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy() {
+    console.log('server number ' + this.serverInfo.count + ' has been destroyed!');
   }
 
 }
