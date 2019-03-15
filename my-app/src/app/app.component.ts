@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+  pageState = 'welcome';
   name = 'my-app';
   hiddenDetails = true;
   serversList = [];
@@ -36,6 +36,10 @@ export class AppComponent {
       server.count = i++;
     }
     // delete this.staticServersList[serverInfo.count - 1];
+  }
+
+  onChangePageState(text: string) {
+    this.pageState = text;
   }
 
 }

@@ -10,31 +10,40 @@
   <!--<input type="text" [(ngModel)]="name">-->
 <!--</label>-->
 <!--<app-server></app-server>-->
-<h1 style="text-align:center">
-Welcome to {{ name }}!
-</h1>
-<h2 style="text-align:center">This is my first Angular application</h2>
-<p>There is a button</p>
-<button class="btn btn-primary" (click)="onDisplayDetails()">Display details</button>
-<!--<p [hidden]="hiddenDetails">some secret text</p>-->
-<p *ngIf="!hiddenDetails; else noSecret">some secret text</p>
-<ng-template #noSecret>
-  <p >nothing special here</p>
-</ng-template>
-<button class="btn btn-warning" (click)="addTheServer()">Add server</button>
-<div
-  *ngFor="let servers of serversList"
-  [ngStyle]="{background: servers > 5 ? 'blue' : 'white' }"
-  [ngClass]="{'white-text': servers > 5 }"
->{{servers}}</div>
-<h3>And some static random servers:</h3>
-<button class="btn btn-warning" (click)="addTheStaticServer()">Add static server</button>
-<app-server
-  (serverDeleting)="onDeleteStaticServer($event)"
-  *ngFor="let oneServer of staticServersList"
-  [serverInfo]="oneServer"
-></app-server>
+<app-header (pageState)="onChangePageState($event)"></app-header>
 
+<div style="margin: 10px"
+     *ngIf="pageState==='welcome'">
+  <h1 style="text-align:center">
+    Welcome to {{ name }}!
+  </h1>
+  <h2 style="text-align:center">This is my first Angular application</h2>
+  <p>There is a buttons in a header, try to click them</p>
+</div>
 
+<div style="margin: 10px"
+     *ngIf="pageState==='test1'">
+  <button class="btn btn-primary" (click)="onDisplayDetails()">Display details</button>
+  <!--<p [hidden]="hiddenDetails">some secret text</p>-->
+  <p *ngIf="!hiddenDetails; else noSecret">some secret text</p>
+  <ng-template #noSecret>
+    <p >nothing special here</p>
+  </ng-template>
+  <button class="btn btn-warning" (click)="addTheServer()">Add server</button>
+  <div
+    *ngFor="let servers of serversList"
+    [ngStyle]="{background: servers > 5 ? 'blue' : 'white' }"
+    [ngClass]="{'white-text': servers > 5 }"
+  >{{servers}}</div>
+</div>
 
-
+<div style="margin: 10px"
+     *ngIf="pageState==='test2'">
+  <h3>Add some static random servers:</h3>
+  <button class="btn btn-warning" (click)="addTheStaticServer()">Add static server</button>
+  <app-server
+    (serverDeleting)="onDeleteStaticServer($event)"
+    *ngFor="let oneServer of staticServersList"
+    [serverInfo]="oneServer"
+  ></app-server>
+</div>
