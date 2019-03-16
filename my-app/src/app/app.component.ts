@@ -14,12 +14,10 @@ export class AppComponent {
 
   onDisplayDetails() {
     this.hiddenDetails = !this.hiddenDetails;
-    // console.log(this.hiddenDetails);
   }
 
   addTheServer() {
     this.serversList.push(this.serversList.length + 1);
-    // console.log(this.serversList);
   }
 
   addTheStaticServer() {
@@ -35,7 +33,6 @@ export class AppComponent {
     for (const server of this.staticServersList) {
       server.count = i++;
     }
-    // delete this.staticServersList[serverInfo.count - 1];
   }
 
   onChangePageState(text: string) {

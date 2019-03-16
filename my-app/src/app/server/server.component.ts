@@ -1,5 +1,4 @@
 import {Component, OnInit, Input, Output, EventEmitter, OnDestroy} from '@angular/core';
-// import {element} from 'protractor';
 
 @Component({
   selector: 'app-server',
@@ -12,8 +11,6 @@ import {Component, OnInit, Input, Output, EventEmitter, OnDestroy} from '@angula
   `]
 })
 export class ServerComponent implements OnInit, OnDestroy {
-  // serverNumber;
-  // serverStatus;
   @Input() serverInfo: {count: number, status: string};
   @Output() serverDeleting = new EventEmitter<{count: number}>();
 
