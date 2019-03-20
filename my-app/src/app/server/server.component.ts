@@ -15,16 +15,6 @@ export class ServerComponent implements OnInit, OnDestroy {
   @Output() serverDeleting = new EventEmitter<{count: number}>();
 
   constructor() {
-    // console.log(this.serverInfo);
-    // setTimeout(() => {
-    //   // console.log(this, this.serverInfo)
-    //   if (this.serverInfo) {
-    //     this.serverNumber = this.serverInfo.count; // (Math.random() * 10).toFixed(0);
-    //     this.serverStatus = this.serverInfo.status; // Math.random() > 0.5 ? 'online' : 'offline';
-    //   }
-    // }, 2000);
-    // this.serverNumber = this.serverInfo.count || 0; // (Math.random() * 10).toFixed(0);
-    // this.serverStatus = this.serverInfo.status || 'offline'; // Math.random() > 0.5 ? 'online' : 'offline';
   }
 
   onDeleteServer() {
