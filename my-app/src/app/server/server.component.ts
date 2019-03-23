@@ -3,7 +3,6 @@ import {Component, OnInit, Input, Output, EventEmitter, OnDestroy} from '@angula
 @Component({
   selector: 'app-server',
   templateUrl: './server.component.html',
-  // styleUrls: ['./server.component.css']
   styles: [`
     h3 {
       color: brown;
