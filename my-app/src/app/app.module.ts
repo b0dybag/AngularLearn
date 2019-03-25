@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { HeaderComponent } from './header/header.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { TestComponent } from './test/test.component';
 
 const  appRouters: Route[] = [
-  {path: 'test3', component: 'test'}
+  {path: 'test3', component: TestComponent}
 ];
 
 @NgModule({
@@ -17,7 +18,8 @@ const  appRouters: Route[] = [
     AppComponent,
     ServerComponent,
     HeaderComponent,
-    DropdownDirective
+    DropdownDirective,
+    TestComponent
   ],
   imports: [
     BrowserModule,
